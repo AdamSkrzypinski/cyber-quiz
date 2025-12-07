@@ -1,6 +1,3 @@
-@charset "UTF-8";
-/* --- 1. Zmienne i Konfiguracja --- */
-/* --- 2. Reset i Style Globalne --- */
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -25,12 +22,11 @@ body {
   padding: 20px;
 }
 
-/* --- 3. Główny Kontener Aplikacji --- */
 .app-container {
   background: #ffffff;
   width: 600px;
   max-width: 100%;
-  min-height: 400px; /* Stała minimalna wysokość, żeby nie skakało */
+  min-height: 400px;
   border-radius: 12px;
   -webkit-box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
           box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
@@ -49,7 +45,6 @@ body {
           justify-content: center;
 }
 
-/* --- 4. Zarządzanie Ekranami (SPA) --- */
 .screen {
   display: none;
   -webkit-animation: fadeIn 0.4s ease;
@@ -95,7 +90,6 @@ body {
             transform: translateY(0);
   }
 }
-/* --- 5. Elementy Typograficzne i UI --- */
 h1, h2, h3 {
   font-family: "Poppins", sans-serif;
   text-align: center;
@@ -117,7 +111,6 @@ p.description {
   line-height: 1.6;
 }
 
-/* --- 6. Przyciski (System) --- */
 .btn, .answer-grid button {
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
@@ -189,7 +182,6 @@ p.description {
           justify-content: center;
 }
 
-/* --- 7. Ekran Quizu --- */
 #quiz-screen {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
@@ -236,8 +228,13 @@ p.description {
 }
 
 .answer-grid {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 12px;
 }
 
@@ -250,6 +247,7 @@ p.description {
       -ms-flex-pack: start;
           justify-content: flex-start;
   padding: 1rem;
+  width: 100%;
 }
 .answer-grid button:hover:not(:disabled) {
   background-color: #e2e6ea;
@@ -284,7 +282,6 @@ p.description {
   background-color: #0056b3;
 }
 
-/* --- 8. Ekran Wyniku --- */
 .result-icon {
   font-size: 4rem;
   color: #ffc107;
@@ -304,70 +301,58 @@ p.description {
   margin-bottom: 1.5rem;
 }
 
-/* --- 9. Ekran Statystyk --- */
-.stats-summary {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 1rem;
+.review-container {
+  margin-top: 1.5rem;
   width: 100%;
-  margin-bottom: 2rem;
-}
-
-.stat-card {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  background: #f8f9fa;
-  padding: 1rem;
-  border-radius: 8px;
-  text-align: center;
-  border: 1px solid #eee;
-}
-.stat-card h3 {
-  font-size: 0.9rem;
-  color: #666666;
-  margin-bottom: 0.5rem;
-}
-.stat-card span {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #007bff;
-}
-
-.stats-list {
-  width: 100%;
-  list-style: none;
-  max-height: 200px;
+  border-top: 2px solid #eee;
+  padding-top: 1.5rem;
+  max-height: 300px;
   overflow-y: auto;
-  border: 1px solid #eee;
-  border-radius: 8px;
-  padding: 10px;
-  margin-bottom: 1rem;
+  text-align: left;
 }
-.stats-list li {
-  padding: 8px;
-  border-bottom: 1px solid #eee;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+.review-container h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.review-item {
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 10px;
   font-size: 0.9rem;
 }
-.stats-list li:last-child {
-  border-bottom: none;
+.review-item.correct {
+  border-left: 5px solid #28a745;
 }
-.stats-list li span.date {
-  color: #999;
-  font-size: 0.8rem;
+.review-item.wrong {
+  border-left: 5px solid #dc3545;
 }
-.stats-list li span.score {
+.review-item p.q-text {
   font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
 }
-.stats-list .empty-state {
-  text-align: center;
-  color: #999;
-  padding: 1rem;
+.review-item p.user-ans {
+  margin-bottom: 0.2rem;
+}
+.review-item p.user-ans span {
+  font-weight: 600;
+}
+.review-item p.user-ans.bad {
+  color: #dc3545;
+}
+.review-item p.user-ans.good {
+  color: #28a745;
+}
+.review-item p.correct-ans {
+  color: #28a745;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.hidden {
+  display: none !important;
 }/*# sourceMappingURL=style.css.map */

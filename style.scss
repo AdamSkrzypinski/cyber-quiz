@@ -1,10 +1,8 @@
-/* --- 1. Zmienne i Konfiguracja --- */
 $color-bg: #f0f2f5;
 $color-container-bg: #ffffff;
 $color-text: #333333;
 $color-text-light: #666666;
 
-// Kolory Akcji
 $color-primary: #007bff;
 $color-primary-hover: #0056b3;
 $color-secondary: #6c757d;
@@ -12,7 +10,6 @@ $color-secondary-hover: #5a6268;
 $color-danger: #dc3545;
 $color-danger-hover: #c82333;
 
-// Kolory Statusu
 $color-correct-bg: #d4edda;
 $color-correct-border: #c3e6cb;
 $color-correct-text: #155724;
@@ -20,16 +17,13 @@ $color-wrong-bg: #f8d7da;
 $color-wrong-border: #f5c6cb;
 $color-wrong-text: #721c24;
 
-// Typografia
 $font-headings: 'Poppins', sans-serif;
 $font-body: 'Open Sans', sans-serif;
 
-// Inne
 $border-radius: 12px;
 $box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 $transition: all 0.2s ease-in-out;
 
-/* --- 2. Reset i Style Globalne --- */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -47,12 +41,11 @@ body {
     padding: 20px;
 }
 
-/* --- 3. Główny Kontener Aplikacji --- */
 .app-container {
     background: $color-container-bg;
     width: 600px;
     max-width: 100%;
-    min-height: 400px; /* Stała minimalna wysokość, żeby nie skakało */
+    min-height: 400px;
     border-radius: $border-radius;
     box-shadow: $box-shadow;
     padding: 2rem;
@@ -60,16 +53,15 @@ body {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: center; // Centrowanie zawartości w pionie
+    justify-content: center;
 }
 
-/* --- 4. Zarządzanie Ekranami (SPA) --- */
 .screen {
-    display: none; // Domyślnie ukryte
+    display: none;
     animation: fadeIn 0.4s ease;
 
     &.active {
-        display: block; // Pokazujemy tylko ten z klasą .active
+        display: block;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -82,7 +74,6 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- 5. Elementy Typograficzne i UI --- */
 h1, h2, h3 {
     font-family: $font-headings;
     text-align: center;
@@ -102,7 +93,6 @@ p.description {
     line-height: 1.6;
 }
 
-/* --- 6. Przyciski (System) --- */
 .btn {
     font-family: $font-body;
     font-weight: 600;
@@ -153,9 +143,8 @@ p.description {
     justify-content: center;
 }
 
-/* --- 7. Ekran Quizu --- */
 #quiz-screen {
-    align-items: stretch; // Rozciągnij elementy na szerokość
+    align-items: stretch;
 }
 
 .quiz-header {
@@ -174,7 +163,7 @@ p.description {
 .progress-fill {
     height: 100%;
     background-color: $color-primary;
-    width: 0%; // JS będzie to zmieniać
+    width: 0%;
     transition: width 0.3s ease;
 }
 
@@ -193,20 +182,20 @@ p.description {
 }
 
 .answer-grid {
-    display: grid;
-    grid-template-columns: 1fr; // Domyślnie jedna kolumna
+    display: flex;
+    flex-direction: column;
     gap: 12px;
 }
 
-// Styl przycisków odpowiedzi
 .answer-grid button {
-    @extend .btn; // Dziedziczy style .btn
+    @extend .btn;
     background-color: #f8f9fa;
     border: 2px solid #e9ecef;
     color: $color-text;
     text-align: left;
     justify-content: flex-start;
     padding: 1rem;
+    width: 100%;
     
     &:hover:not(:disabled) {
         background-color: #e2e6ea;
@@ -234,15 +223,14 @@ p.description {
     .next-btn {
         background-color: $color-primary;
         color: white;
-        width: 100%; // Na telefonach pełna szerokość
+        width: 100%;
         &:hover { background-color: $color-primary-hover; }
     }
 }
 
-/* --- 8. Ekran Wyniku --- */
 .result-icon {
     font-size: 4rem;
-    color: #ffc107; // Złoty kolor pucharu
+    color: #ffc107;
     margin-bottom: 1rem;
 }
 
@@ -259,51 +247,59 @@ p.description {
     margin-bottom: 1.5rem;
 }
 
-/* --- 9. Ekran Statystyk --- */
-.stats-summary {
-    display: flex;
-    gap: 1rem;
+.review-container {
+    margin-top: 1.5rem;
     width: 100%;
-    margin-bottom: 2rem;
+    border-top: 2px solid #eee;
+    padding-top: 1.5rem;
+    max-height: 300px;
+    overflow-y: auto;
+    text-align: left;
+
+    h3 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        color: #555;
+    }
 }
 
-.stat-card {
-    flex: 1;
-    background: #f8f9fa;
+.review-item {
+    background: #f9f9f9;
+    border: 1px solid #eee;
     padding: 1rem;
     border-radius: 8px;
-    text-align: center;
-    border: 1px solid #eee;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
 
-    h3 { font-size: 0.9rem; color: $color-text-light; margin-bottom: 0.5rem; }
-    span { font-size: 1.5rem; font-weight: bold; color: $color-primary; }
+    &.correct {
+        border-left: 5px solid #28a745;
+    }
+
+    &.wrong {
+        border-left: 5px solid #dc3545;
+    }
+
+    p.q-text {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: #333;
+    }
+
+    p.user-ans {
+        margin-bottom: 0.2rem;
+        
+        span { font-weight: 600; }
+        &.bad { color: #dc3545; }
+        &.good { color: #28a745; }
+    }
+
+    p.correct-ans {
+        color: #28a745;
+        font-weight: 600;
+        font-size: 0.85rem;
+    }
 }
 
-.stats-list {
-    width: 100%;
-    list-style: none;
-    max-height: 200px;
-    overflow-y: auto; // Scrollowanie historii
-    border: 1px solid #eee;
-    border-radius: 8px;
-    padding: 10px;
-    margin-bottom: 1rem;
-
-    li {
-        padding: 8px;
-        border-bottom: 1px solid #eee;
-        display: flex;
-        justify-content: space-between;
-        font-size: 0.9rem;
-
-        &:last-child { border-bottom: none; }
-        span.date { color: #999; font-size: 0.8rem; }
-        span.score { font-weight: bold; }
-    }
-
-    .empty-state {
-        text-align: center;
-        color: #999;
-        padding: 1rem;
-    }
+.hidden {
+    display: none !important;
 }
