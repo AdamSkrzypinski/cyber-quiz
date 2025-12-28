@@ -1,3 +1,4 @@
+
 const startScreen = document.getElementById('start-screen');
 const quizScreen = document.getElementById('quiz-screen');
 const resultScreen = document.getElementById('result-screen');
@@ -19,10 +20,21 @@ const startButton = document.getElementById('start-btn');
 const restartButton = document.getElementById('restart-btn');
 const backToMenuButton = document.getElementById('back-to-menu-btn');
 const reviewButton = document.getElementById('review-btn');
+const limitButtons = document.querySelectorAll('.limit-btn');
 
 let currentQuestionIndex = 0;
 let score = 0;
 let userAnswers = [];
+let questionLimit = 10;
+let currentQuizQuestions = [];
+
+limitButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        limitButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        questionLimit = parseInt(btn.dataset.limit);
+    });
+});
 
 startButton.addEventListener('click', startQuiz);
 nextButton.addEventListener('click', () => {
@@ -34,8 +46,9 @@ backToMenuButton.addEventListener('click', showStartScreen);
 reviewButton.addEventListener('click', toggleReview);
 
 function startQuiz() {
-
-    questions.sort(() => Math.random() - 0.5);
+    const shuffled = [...questions].sort(() => Math.random() - 0.5);
+    
+    currentQuizQuestions = shuffled.slice(0, questionLimit);
 
     showScreen(quizScreen);
     currentQuestionIndex = 0;
@@ -48,8 +61,8 @@ function startQuiz() {
 
 function setNextQuestion() {
     resetState();
-    if (currentQuestionIndex < questions.length) {
-        showQuestion(questions[currentQuestionIndex]);
+    if (currentQuestionIndex < currentQuizQuestions.length) {
+        showQuestion(currentQuizQuestions[currentQuestionIndex]);
     } else {
         endQuiz();
     }
@@ -57,9 +70,9 @@ function setNextQuestion() {
 
 function showQuestion(question) {
     questionElement.innerText = question.question;
-    questionNumberElement.innerText = `Pytanie ${currentQuestionIndex + 1}/${questions.length}`;
+    questionNumberElement.innerText = `Pytanie ${currentQuestionIndex + 1}/${currentQuizQuestions.length}`;
     
-    const progressPercent = ((currentQuestionIndex) / questions.length) * 100;
+    const progressPercent = ((currentQuestionIndex) / currentQuizQuestions.length) * 100;
     progressFill.style.width = `${progressPercent}%`;
 
     question.answers.forEach(answer => {
@@ -113,9 +126,9 @@ function selectAnswer(e) {
 function endQuiz() {
     showScreen(resultScreen);
     finalScoreElement.innerText = score;
-    totalQuestionsElement.innerText = questions.length;
+    totalQuestionsElement.innerText = currentQuizQuestions.length;
     
-    const percentage = (score / questions.length) * 100;
+    const percentage = (score / currentQuizQuestions.length) * 100;
     if (percentage === 100) {
         resultMessageElement.innerText = "Perfekcyjnie! Jesteś ekspertem cyberbezpieczeństwa! 🏆";
     } else if (percentage >= 70) {
@@ -131,7 +144,7 @@ function generateReview() {
     reviewList.innerHTML = '';
     
     userAnswers.forEach((answerData, index) => {
-        const questionData = questions[answerData.questionIndex];
+        const questionData = currentQuizQuestions[answerData.questionIndex];
         const correctAns = questionData.answers.find(a => a.correct).text;
         
         const item = document.createElement('div');

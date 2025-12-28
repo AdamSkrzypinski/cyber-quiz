@@ -14,9 +14,22 @@
 
     <main class="app-container">
         
-        <section id="start-screen" class="screen active">
+<section id="start-screen" class="screen active">
             <h1>Ochrona Danych<br><span>i Cyberzagrożenia</span></h1>
             <p class="description">Sprawdź swoją wiedzę o bezpieczeństwie w sieci, RODO i zagrożeniach.</p>
+            
+            <div class="limit-selection">
+                <p>Wybierz liczbę pytań:</p>
+                <div class="limit-buttons">
+                    <button class="limit-btn" data-limit="5">5</button>
+                    <button class="limit-btn active" data-limit="10">10</button>
+                    <button class="limit-btn" data-limit="15">15</button>
+                    <button class="limit-btn" data-limit="20">20</button>
+                    <button class="limit-btn" data-limit="25">25</button>
+                    <button class="limit-btn" data-limit="30">30</button>
+                </div>
+            </div>
+
             <div class="actions">
                 <button id="start-btn" class="btn primary-btn">Rozpocznij Quiz <i class="fa-solid fa-play"></i></button>
             </div>

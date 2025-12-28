@@ -1,4 +1,5 @@
 const questions = [
+
     {
         question: "Czym jest 'Poufność' (Confidentiality) w kontekście modelu CIA?",
         answers: [
@@ -132,6 +133,143 @@ const questions = [
             { text: "Naturalny", correct: false },
             { text: "Ludzki (przypadkowy)", correct: true },
             { text: "Celowy", correct: false }
+        ]
+    },
+
+ 
+    {
+        question: "Co to jest 'Worm' (Robak komputerowy)?",
+        answers: [
+            { text: "Złośliwy program wymagający pliku-nosiciela", correct: false },
+            { text: "Program rozprzestrzeniający się samodzielnie przez sieć", correct: true },
+            { text: "Oprogramowanie wyświetlające reklamy", correct: false },
+            { text: "Narzędzie do łamania haseł", correct: false }
+        ]
+    },
+    {
+        question: "Oprogramowanie typu 'Spyware' służy do:",
+        answers: [
+            { text: "Szyfrowania plików", correct: false },
+            { text: "Śledzenia działań użytkownika", correct: true },
+            { text: "Blokowania dostępu do sieci", correct: false },
+            { text: "Kopania kryptowalut", correct: false }
+        ]
+    },
+    {
+        question: "Atak MITM (Man-in-the-Middle) polega na:",
+        answers: [
+            { text: "Zgadywaniu haseł metodą słownikową", correct: false },
+            { text: "Fizycznej kradzieży serwera", correct: false },
+            { text: "Przechwytywaniu komunikacji między użytkownikiem a serwerem", correct: true },
+            { text: "Wysyłaniu spamu", correct: false }
+        ]
+    },
+    {
+        question: "Jaka jest różnica między danymi a informacją?",
+        answers: [
+            { text: "To synonimy, oznaczają to samo", correct: false },
+            { text: "Dane to surowe fakty, informacja to dane przetworzone i zinterpretowane", correct: true },
+            { text: "Informacja to liczby, a dane to tekst", correct: false },
+            { text: "Dane są produktem, a informacja surowcem", correct: false }
+        ]
+    },
+    {
+        question: "Macierz ryzyka służy do:",
+        answers: [
+            { text: "Generowania haseł", correct: false },
+            { text: "Wizualizacji relacji między prawdopodobieństwem a skutkiem", correct: true },
+            { text: "Szyfrowania dysków", correct: false },
+            { text: "Tworzenia kopii zapasowych", correct: false }
+        ]
+    },
+    {
+        question: "Strategia 'Akceptacji' ryzyka jest stosowana, gdy:",
+        answers: [
+            { text: "Koszt zabezpieczenia przewyższa potencjalną stratę", correct: true },
+            { text: "Ryzyko jest krytyczne dla życia ludzkiego", correct: false },
+            { text: "Nie wiemy, jak zabezpieczyć system", correct: false },
+            { text: "Mamy nieograniczony budżet", correct: false }
+        ]
+    },
+    {
+        question: "Analiza ryzyka 'Jakościowa' opiera się na:",
+        answers: [
+            { text: "Dokładnych wyliczeniach finansowych", correct: false },
+            { text: "Eksperckiej ocenie (np. niskie/średnie/wysokie)", correct: true },
+            { text: "Statystykach z ostatnich 100 lat", correct: false },
+            { text: "Wyłącznie danych z logów systemowych", correct: false }
+        ]
+    },
+    {
+        question: "Jaki jest pierwszy etap obsługi incydentu bezpieczeństwa?",
+        answers: [
+            { text: "Odzyskiwanie danych", correct: false },
+            { text: "Analiza przyczyn", correct: false },
+            { text: "Wykrycie", correct: true },
+            { text: "Raportowanie", correct: false }
+        ]
+    },
+    {
+        question: "Art. 32 RODO wymaga stosowania:",
+        answers: [
+            { text: "Wyłącznie zabezpieczeń fizycznych", correct: false },
+            { text: "Odpowiednich środków technicznych i organizacyjnych", correct: true },
+            { text: "Najdroższego oprogramowania na rynku", correct: false },
+            { text: "Haseł składających się tylko z cyfr", correct: false }
+        ]
+    },
+    {
+        question: "Jaki był powód wycieku danych w Morele.net (wg wykładu)?",
+        answers: [
+            { text: "Kradzież laptopa prezesa", correct: false },
+            { text: "Pożar serwerowni", correct: false },
+            { text: "Socjotechnika i nieprawidłowa konfiguracja systemu", correct: true },
+            { text: "Atak DDoS", correct: false }
+        ]
+    },
+    {
+        question: "Off-site backup oznacza:",
+        answers: [
+            { text: "Kopię zapasową na tym samym dysku", correct: false },
+            { text: "Kopię zapasową przechowywaną w innej lokalizacji", correct: true },
+            { text: "Brak kopii zapasowej", correct: false },
+            { text: "Wydrukowanie dokumentów", correct: false }
+        ]
+    },
+    {
+        question: "Systemy UPS (Uninterruptible Power Supply) chronią przed:",
+        answers: [
+            { text: "Atakami hakerskimi", correct: false },
+            { text: "Wirusami", correct: false },
+            { text: "Utratą zasilania i nagłym wyłączeniem sprzętu", correct: true },
+            { text: "Spamem", correct: false }
+        ]
+    },
+    {
+        question: "Audyt bezpieczeństwa 'Zewnętrzny' jest prowadzony przez:",
+        answers: [
+            { text: "Administratora systemu", correct: false },
+            { text: "Pracowników działu IT firmy", correct: false },
+            { text: "Niezależną firmę audytorską", correct: true },
+            { text: "Prezesa firmy", correct: false }
+        ]
+    },
+    {
+        question: "Co oznacza skrót 'Sniffing' w kontekście sieci?",
+        answers: [
+            { text: "Wysyłanie fałszywych e-maili", correct: false },
+            { text: "Podsłuchiwanie ruchu sieciowego", correct: true },
+            { text: "Blokowanie serwera", correct: false },
+            { text: "Łamanie haseł", correct: false }
+        ]
+    },
+    {
+        question: "Co oznacza skrót 'Spoofing'?",
+        answers: [
+            { text: "Szyfrowanie danych", correct: false },
+            { text: "Fałszowanie adresu IP lub e-maila nadawcy", correct: true },
+            { text: "Skanowanie antywirusowe", correct: false },
+            { text: "Tworzenie kopii zapasowej", correct: false }
         ]
     }
 ];
