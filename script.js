@@ -30,7 +30,7 @@ let questionLimit = 10;
 let currentQuizQuestions = [];
 
 let timer;
-const TIME_LIMIT = 15;
+const TIME_LIMIT = 20;
 let timeLeft = TIME_LIMIT;
 
 limitButtons.forEach(btn => {
@@ -240,11 +240,12 @@ function showStartScreen() {
 }
 
 function sendScoreToGoogle() {
-    const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdyFUtigLJzU179m_aBaP4AfHwZ9ATVIFNYXItpDtXre1nVUQ/viewform";
-    const entryScore = "entry.1958897789";
-    const entryMax = "entry.1633570659";
+    const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfP4FbQIpqlHo07T5berYhyOFNN7XP_tRLp62zb53GMsnKC5g/viewform";
+    const entryResult = "entry.1101132139"; 
 
-    const finalLink = `${formUrl}?usp=pp_url&${entryScore}=${score}&${entryMax}=${currentQuizQuestions.length}`;
+    const resultString = `${score}/${currentQuizQuestions.length}`;
+    
+    const finalLink = `${formUrl}?usp=pp_url&${entryResult}=${resultString}`;
     window.open(finalLink, '_blank');
 }
 
