@@ -1,5 +1,4 @@
 const questions = [
-
     {
         question: "Czym jest 'Poufność' (Confidentiality) w kontekście modelu CIA?",
         answers: [
@@ -37,7 +36,7 @@ const questions = [
         ]
     },
     {
-        question: "Co jest źródłem ponad 60% incydentów bezpieczeństwa (wg Lidermana)?",
+        question: "Co jest źródłem ponad 60% incydentów bezpieczeństwa?",
         answers: [
             { text: "Błędy techniczne", correct: false },
             { text: "Siły natury", correct: false },
@@ -135,8 +134,6 @@ const questions = [
             { text: "Celowy", correct: false }
         ]
     },
-
- 
     {
         question: "Co to jest 'Worm' (Robak komputerowy)?",
         answers: [
@@ -210,12 +207,12 @@ const questions = [
         ]
     },
     {
-        question: "Art. 32 RODO wymaga stosowania:",
+        question: "Aby bezpiecznie przetwarzać dane w systemie (zgodnie z RODO), należy:",
         answers: [
-            { text: "Wyłącznie zabezpieczeń fizycznych", correct: false },
-            { text: "Odpowiednich środków technicznych i organizacyjnych", correct: true },
-            { text: "Najdroższego oprogramowania na rynku", correct: false },
-            { text: "Haseł składających się tylko z cyfr", correct: false }
+            { text: "Zabezpieczyć sprzęt tylko hasłem 'admin'", correct: false },
+            { text: "Stosować szyfrowanie, kopie zapasowe i aktualizacje", correct: true },
+            { text: "Zainstalować najdroższe oprogramowanie na rynku", correct: false },
+            { text: "Używać tylko prywatnego laptopa w pracy", correct: false }
         ]
     },
     {

@@ -8,6 +8,7 @@ const nextButton = document.getElementById('next-btn');
 const progressFill = document.getElementById('progress');
 const questionNumberElement = document.getElementById('question-number');
 const scoreCounterElement = document.getElementById('score-counter');
+const timerElement = document.getElementById('timer');
 
 const finalScoreElement = document.getElementById('final-score');
 const totalQuestionsElement = document.getElementById('total-questions');
@@ -27,6 +28,10 @@ let score = 0;
 let userAnswers = [];
 let questionLimit = 10;
 let currentQuizQuestions = [];
+
+let timer;
+const TIME_LIMIT = 15;
+let timeLeft = TIME_LIMIT;
 
 limitButtons.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -85,16 +90,62 @@ function showQuestion(question) {
         button.addEventListener('click', selectAnswer);
         answerButtonsElement.appendChild(button);
     });
+
+    startTimer();
 }
 
 function resetState() {
+    stopTimer();
     nextButton.disabled = true;
+    timerElement.classList.remove('warning');
     while (answerButtonsElement.firstChild) {
         answerButtonsElement.removeChild(answerButtonsElement.firstChild);
     }
 }
 
+function startTimer() {
+    timeLeft = TIME_LIMIT;
+    timerElement.innerHTML = `<i class="fa-regular fa-clock"></i> ${timeLeft}s`;
+    
+    timer = setInterval(() => {
+        timeLeft--;
+        timerElement.innerHTML = `<i class="fa-regular fa-clock"></i> ${timeLeft}s`;
+
+        if (timeLeft <= 5) {
+            timerElement.classList.add('warning');
+        }
+
+        if (timeLeft <= 0) {
+            clearInterval(timer);
+            handleTimeout();
+        }
+    }, 1000);
+}
+
+function stopTimer() {
+    clearInterval(timer);
+}
+
+function handleTimeout() {
+    userAnswers.push({
+        questionIndex: currentQuestionIndex,
+        selected: "(Brak czasu)",
+        isCorrect: false
+    });
+
+    Array.from(answerButtonsElement.children).forEach(button => {
+        if (button.dataset.correct === "true") {
+            button.classList.add("correct");
+        }
+        button.disabled = true;
+    });
+
+    nextButton.disabled = false;
+}
+
 function selectAnswer(e) {
+    stopTimer();
+
     const selectedBtn = e.target;
     const isCorrect = selectedBtn.dataset.correct === "true";
     const selectedText = selectedBtn.innerText;
