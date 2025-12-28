@@ -1,4 +1,3 @@
-
 const startScreen = document.getElementById('start-screen');
 const quizScreen = document.getElementById('quiz-screen');
 const resultScreen = document.getElementById('result-screen');
@@ -21,6 +20,7 @@ const restartButton = document.getElementById('restart-btn');
 const backToMenuButton = document.getElementById('back-to-menu-btn');
 const reviewButton = document.getElementById('review-btn');
 const limitButtons = document.querySelectorAll('.limit-btn');
+const sendScoreButton = document.getElementById('send-score-btn');
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -44,10 +44,10 @@ nextButton.addEventListener('click', () => {
 restartButton.addEventListener('click', startQuiz);
 backToMenuButton.addEventListener('click', showStartScreen);
 reviewButton.addEventListener('click', toggleReview);
+sendScoreButton.addEventListener('click', sendScoreToGoogle);
 
 function startQuiz() {
     const shuffled = [...questions].sort(() => Math.random() - 0.5);
-    
     currentQuizQuestions = shuffled.slice(0, questionLimit);
 
     showScreen(quizScreen);
@@ -186,6 +186,15 @@ function showScreen(screenToShow) {
 
 function showStartScreen() {
     showScreen(startScreen);
+}
+
+function sendScoreToGoogle() {
+    const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdyFUtigLJzU179m_aBaP4AfHwZ9ATVIFNYXItpDtXre1nVUQ/viewform";
+    const entryScore = "entry.1958897789";
+    const entryMax = "entry.1633570659";
+
+    const finalLink = `${formUrl}?usp=pp_url&${entryScore}=${score}&${entryMax}=${currentQuizQuestions.length}`;
+    window.open(finalLink, '_blank');
 }
 
 showStartScreen();

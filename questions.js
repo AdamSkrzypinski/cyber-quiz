@@ -219,7 +219,7 @@ const questions = [
         ]
     },
     {
-        question: "Jaki był powód wycieku danych w Morele.net (wg wykładu)?",
+        question: "Jaki był powód wycieku danych w Morele.net?",
         answers: [
             { text: "Kradzież laptopa prezesa", correct: false },
             { text: "Pożar serwerowni", correct: false },

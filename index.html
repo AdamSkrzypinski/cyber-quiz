@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz: Ochrona Danych i Cyberbezpieczeństwo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
 
     <main class="app-container">
-        
-<section id="start-screen" class="screen active">
+
+        <section id="start-screen" class="screen active">
             <h1>Ochrona Danych<br><span>i Cyberzagrożenia</span></h1>
             <p class="description">Sprawdź swoją wiedzę o bezpieczeństwie w sieci, RODO i zagrożeniach.</p>
-            
+
             <div class="limit-selection">
                 <p>Wybierz liczbę pytań:</p>
                 <div class="limit-buttons">
@@ -45,14 +48,15 @@
                     <span id="score-counter"></span>
                 </div>
             </div>
-            
+
             <h2 id="question-text"></h2>
-            
+
             <div id="answer-buttons" class="answer-grid">
             </div>
 
             <div class="quiz-footer">
-                <button id="next-btn" class="btn next-btn" disabled>Następne <i class="fa-solid fa-arrow-right"></i></button>
+                <button id="next-btn" class="btn next-btn" disabled>Następne <i
+                        class="fa-solid fa-arrow-right"></i></button>
             </div>
         </section>
 
@@ -66,18 +70,26 @@
                 <span id="final-score">0</span> / <span id="total-questions">15</span>
             </div>
             <p id="result-message"></p>
-            
+
             <div class="actions">
-                <button id="review-btn" class="btn secondary-btn">Sprawdź odpowiedzi <i class="fa-solid fa-list-check"></i></button>
+                <button id="send-score-btn" class="btn primary-btn" style="background-color: #28a745;">
+                    Wyślij wynik (dla statystyk) <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+
+            <div class="actions">
+                <button id="review-btn" class="btn secondary-btn">Sprawdź odpowiedzi <i
+                        class="fa-solid fa-list-check"></i></button>
             </div>
 
             <div id="review-container" class="review-container hidden">
                 <h3>Podsumowanie Twoich Odpowiedzi</h3>
                 <div id="review-list"></div>
             </div>
-            
+
             <div class="actions">
-                <button id="restart-btn" class="btn primary-btn">Zagraj Ponownie <i class="fa-solid fa-rotate-right"></i></button>
+                <button id="restart-btn" class="btn primary-btn">Zagraj Ponownie <i
+                        class="fa-solid fa-rotate-right"></i></button>
                 <button id="back-to-menu-btn" class="btn secondary-btn">Wróć do Menu</button>
             </div>
         </section>
@@ -87,4 +99,5 @@
     <script src="questions.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
