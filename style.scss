@@ -367,6 +367,20 @@ p.description {
     }
 }
 
+.app-footer {
+    margin-top: 2rem;
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    
+    p {
+        font-size: 0.75rem; 
+        color: #aaa;        
+        margin: 0;
+        font-weight: 400;
+    }
+}
+
 @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.05); }

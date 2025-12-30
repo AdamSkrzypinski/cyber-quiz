@@ -431,6 +431,19 @@ p.description {
           animation: pulse 1s infinite;
 }
 
+.app-footer {
+  margin-top: 2rem;
+  text-align: center;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+.app-footer p {
+  font-size: 0.75rem;
+  color: #aaa;
+  margin: 0;
+  font-weight: 400;
+}
+
 @-webkit-keyframes pulse {
   0% {
     -webkit-transform: scale(1);
