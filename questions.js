@@ -1,5 +1,5 @@
 const questions = [
-    {
+        {
         question: "Czym jest 'Poufność' (Confidentiality) w kontekście modelu CIA?",
         answers: [
             { text: "Zapewnieniem dostępności danych", correct: false },
@@ -267,6 +267,155 @@ const questions = [
             { text: "Fałszowanie adresu IP lub e-maila nadawcy", correct: true },
             { text: "Skanowanie antywirusowe", correct: false },
             { text: "Tworzenie kopii zapasowej", correct: false }
+        ]
+    },
+
+       {
+        question: "Co to jest 2FA (Uwierzytelnianie dwuskładnikowe)?",
+        answers: [
+            { text: "Logowanie dwoma różnymi hasłami", correct: false },
+            { text: "Metoda potwierdzania tożsamości dwoma niezależnymi składnikami (np. hasło + kod SMS)", correct: true },
+            { text: "Konieczność logowania się dwa razy dziennie", correct: false },
+            { text: "System wymagający podania imienia i nazwiska", correct: false }
+        ]
+    },
+
+    {
+        question: "Do czego służy menedżer haseł (Password Manager)?",
+        answers: [
+            { text: "Do bezpiecznego przechowywania i generowania unikalnych haseł", correct: true },
+            { text: "Do łamania haseł innych osób", correct: false },
+            { text: "Do automatycznego logowania się na Facebooku bez hasła", correct: false },
+            { text: "To wirus kradnący hasła", correct: false }
+        ]
+    },
+    {
+        question: "Co oznacza 'kłódka' przy adresie strony (HTTPS)?",
+        answers: [
+            { text: "Że strona jest w 100% bezpieczna i nie może nas oszukać", correct: false },
+            { text: "Że połączenie między Tobą a stroną jest szyfrowane", correct: true },
+            { text: "Że strona jest zamknięta dla odwiedzających", correct: false },
+            { text: "Że strona nie używa plików cookies", correct: false }
+        ]
+    },
+    {
+        question: "Korzystając z otwartej, publicznej sieci Wi-Fi (np. w kawiarni), należy:",
+        answers: [
+            { text: "Logować się do banku, bo to bezpieczne", correct: false },
+            { text: "Unikać przesyłania wrażliwych danych lub używać VPN", correct: true },
+            { text: "Wyłączyć antywirusa, żeby internet działał szybciej", correct: false },
+            { text: "Używać tylko przeglądarki Internet Explorer", correct: false }
+        ]
+    },
+    {
+        question: "Czym jest 'Social Engineering' (Inżynieria społeczna)?",
+        answers: [
+            { text: "Naprawianiem komputerów w firmie", correct: false },
+            { text: "Techniką manipulacji ludźmi w celu wyłudzenia informacji", correct: true },
+            { text: "Programowaniem portali społecznościowych", correct: false },
+            { text: "Budowaniem serwerowni", correct: false }
+        ]
+    },
+    {
+        question: "Co robi VPN (Virtual Private Network)?",
+        answers: [
+            { text: "Przyspiesza internet dwukrotnie", correct: false },
+            { text: "Tworzy szyfrowany tunel dla Twoich danych, ukrywając Twój adres IP", correct: true },
+            { text: "Usuwa wirusy z komputera", correct: false },
+            { text: "Blokuje reklamy na YouTube", correct: false }
+        ]
+    },
+    {
+        question: "Tryb Incognito w przeglądarce zapewnia:",
+        answers: [
+            { text: "Całkowitą anonimowość w internecie", correct: false },
+            { text: "Ukrycie Twojej aktywności przed dostawcą internetu", correct: false },
+            { text: "Brak zapisywania historii przeglądania na Twoim urządzeniu", correct: true },
+            { text: "Ochronę przed wirusami", correct: false }
+        ]
+    },
+    {
+        question: "Dlaczego należy instalować aktualizacje systemu i aplikacji?",
+        answers: [
+            { text: "Tylko po to, by zmienić wygląd ikonek", correct: false },
+            { text: "Aby załatać luki bezpieczeństwa, które mogą wykorzystać hakerzy", correct: true },
+            { text: "Żeby komputer działał wolniej", correct: false },
+            { text: "Aktualizacje nie są potrzebne", correct: false }
+        ]
+    },
+    {
+        question: "Co to jest Botnet?",
+        answers: [
+            { text: "Sieć zainfekowanych komputerów sterowana przez cyberprzestępcę", correct: true },
+            { text: "Robot sprzątający biuro", correct: false },
+            { text: "Legalna sieć serwerów Google", correct: false },
+            { text: "Program do automatycznego grania w gry", correct: false }
+        ]
+    },
+
+
+    {
+        question: "Znalazłeś pendrive na parkingu firmowym. Co robisz?",
+        answers: [
+            { text: "Podłączam go do komputera, żeby sprawdzić, czyj jest", correct: false },
+            { text: "Zabieram go do domu i formatuję", correct: false },
+            { text: "Nie podłączam go i oddaję do działu IT/ochrony", correct: true },
+            { text: "Wyrzucam do śmietnika", correct: false }
+        ]
+    },
+    {
+        question: "Reguła backupu '3-2-1' polega na:",
+        answers: [
+            { text: "Robieniu kopii 3 razy dziennie przez 2 dni", correct: false },
+            { text: "Posiadaniu 3 kopii danych, na 2 różnych nośnikach, z czego 1 poza firmą", correct: true },
+            { text: "Zapisywaniu 3 plików na 2 pendrive'ach", correct: false },
+            { text: "Odliczaniu do startu systemu", correct: false }
+        ]
+    },
+ 
+    {
+        question: "Czym jest 'Shoulder Surfing'?",
+        answers: [
+            { text: "Zgadywaniem haseł przez telefon", correct: false },
+            { text: "Podglądaniem ekranu lub klawiatury użytkownika zza jego pleców", correct: true },
+            { text: "Atakiem hakerskim na serwery pocztowe", correct: false },
+            { text: "Sportem wodnym", correct: false }
+        ]
+    },
+    {
+        question: "Urządzenia IoT (Internet of Things), np. kamery czy żarówki, często są niebezpieczne, bo:",
+        answers: [
+            { text: "Zużywają dużo prądu", correct: false },
+            { text: "Mają fabryczne, domyślne hasła, których użytkownicy nie zmieniają", correct: true },
+            { text: "Nie działają bez Wi-Fi", correct: false },
+            { text: "Są zbyt małe, by zainstalować antywirusa", correct: false }
+        ]
+    },
+    {
+        question: "Co to jest 'Deepfake'?",
+        answers: [
+            { text: "Głęboko ukryty wirus w systemie", correct: false },
+            { text: "Materiał wideo/audio zmanipulowany przez AI, udający prawdziwą osobę", correct: true },
+            { text: "Fałszywy e-mail od księcia z Nigerii", correct: false },
+            { text: "Błąd w kodzie strony internetowej", correct: false }
+        ]
+    },
+    {
+        question: "Keylogger to złośliwe oprogramowanie, które:",
+        answers: [
+            { text: "Szyfruje dysk", correct: false },
+            { text: "Rejestruje każde naciśnięcie klawisza użytkownika", correct: true },
+            { text: "Wyłącza myszkę", correct: false },
+            { text: "Podmienia tapetę pulpitu", correct: false }
+        ]
+    },
+    {
+        question: "Najczęstszym sygnałem ataku phishingowego w e-mailu jest:",
+        answers: [
+            { text: "Brak polskich znaków", correct: false },
+            { text: "Wywieranie presji czasu ('Kliknij natychmiast, bo zablokujemy konto!')", correct: true },
+            { text: "Zbyt długi temat wiadomości", correct: false },
+            { text: "Podpis prezesa firmy", correct: false }
         ]
     }
 ];

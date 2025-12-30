@@ -51,8 +51,17 @@ backToMenuButton.addEventListener('click', showStartScreen);
 reviewButton.addEventListener('click', toggleReview);
 sendScoreButton.addEventListener('click', sendScoreToGoogle);
 
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
 function startQuiz() {
-    const shuffled = [...questions].sort(() => Math.random() - 0.5);
+    const questionsCopy = [...questions];
+    const shuffled = shuffleArray(questionsCopy);
     currentQuizQuestions = shuffled.slice(0, questionLimit);
 
     showScreen(quizScreen);
@@ -80,7 +89,9 @@ function showQuestion(question) {
     const progressPercent = ((currentQuestionIndex) / currentQuizQuestions.length) * 100;
     progressFill.style.width = `${progressPercent}%`;
 
-    question.answers.forEach(answer => {
+    const shuffledAnswers = shuffleArray([...question.answers]);
+
+    shuffledAnswers.forEach(answer => {
         const button = document.createElement('button');
         button.innerText = answer.text;
         button.classList.add('btn');
@@ -250,3 +261,4 @@ function sendScoreToGoogle() {
 }
 
 showStartScreen();
+
