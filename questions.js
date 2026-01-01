@@ -216,15 +216,6 @@ const questions = [
         ]
     },
     {
-        question: "Jaki był powód wycieku danych w Morele.net?",
-        answers: [
-            { text: "Kradzież laptopa prezesa", correct: false },
-            { text: "Pożar serwerowni", correct: false },
-            { text: "Socjotechnika i nieprawidłowa konfiguracja systemu", correct: true },
-            { text: "Atak DDoS", correct: false }
-        ]
-    },
-    {
         question: "Off-site backup oznacza:",
         answers: [
             { text: "Kopię zapasową na tym samym dysku", correct: false },

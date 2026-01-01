@@ -339,10 +339,22 @@ p.description {
     }
 
     &.active {
-        background-color: #007bff; /* Używa Twojego koloru primary */
+        background-color: #007bff;
         color: white;
         border-color: #007bff;
         box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
+    }
+}
+
+.disclaimer {
+    font-size: 0.7rem;
+    color: #888;
+    margin-top: 8px;
+    font-style: italic;
+    
+    i {
+        margin-right: 4px;
+        color: #aaa;
     }
 }
 
